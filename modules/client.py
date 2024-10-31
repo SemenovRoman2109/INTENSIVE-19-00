@@ -1,7 +1,7 @@
 import socket
 
-client_socket = socket.socket(family = socket.AF_INET, type = socket.SOCK_STREAM)
-#підключаємо клієнта до серверу
-client_socket.connect(("127.0.0.1", 8080))
-# Вiдправляє закодованi данi на сервер
-client_socket.send("HI server".encode())
+with socket.socket(family = socket.AF_INET, type = socket.SOCK_STREAM) as client_socket:
+    #підключаємо клієнта до серверу
+    client_socket.connect(("", 8081))
+    # Вiдправляє закодованi данi на сервер
+    client_socket.send("Hello server".encode())
